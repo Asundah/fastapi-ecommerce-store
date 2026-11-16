@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechHub | Checkout</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="nav-container">
+        <a href="/" class="logo">⚡ TechHub</a>
+      </div>
+    </header>
+
+    <main class="cart-page">
+      <h2>Your Cart</h2>
+      <div id="cart-items"></div>
+
+      <div class="checkout-summary">
+        <h3>Total: <span id="cart-total">KES 0</span></h3>
+        <button class="btn checkout-btn" onclick="openCheckout()">
+          Pay with M-Pesa
+        </button>
+      </div>
+    </main>
+
+    <!-- M-Pesa Checkout Modal -->
+    <div id="checkout-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeCheckout()">&times;</span>
+        <h2>M-Pesa Payment</h2>
+        <p>Enter your phone number to receive the STK Push.</p>
+        <input
+          type="tel"
+          id="phone-input"
+          placeholder="0712345678"
+          class="input-field"
+        />
+        <button class="btn" id="pay-btn" onclick="processPayment()">
+          Send Prompt
+        </button>
+        <div id="payment-status" class="status-msg"></div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2024 TechHub. Secure payments via Safaricom.</p>
+    </footer>
+
+    <script src="/static/script.js"></script>
+  </body>
+</html>
